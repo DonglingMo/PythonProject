@@ -1,8 +1,15 @@
 import unittest
 
-class MyTestCase(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(True, False)  # add assertion here
+from testcase.name_function import get_formatted_name
+
+
+class NamesTestCase(unittest.TestCase):
+    # 指定测试前置条件
+    # def setUp(self):
+    def test_get_formatted_name(self):
+        name = get_formatted_name('Tom', 'Smith')
+        self.assertEqual(name, 'Tom Smith')  # add assertion here
+
 
 if __name__ == '__main__':
     unittest.main()
